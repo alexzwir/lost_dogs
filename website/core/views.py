@@ -18,11 +18,8 @@ def saving_lost_pet_pointing_form(request):
         print(form.cleaned_data['local'])
     return HttpResponseRedirect('/')
 
-# raw_lost_dogs = LostPet.objects.all()
 def list_lost_dogs(request):
-
     data = {
-        "data":raw_lost_dogs,
         "dog 1": {
             "Local 1": "Rua Sararé",
             "Photo":"Minha foto"
