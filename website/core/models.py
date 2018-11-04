@@ -45,4 +45,7 @@ class LostPet(models.Model):
     lost_pet_photo = models.ImageField(blank=True,null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.lost_pet_pointing
     

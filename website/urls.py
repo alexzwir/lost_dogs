@@ -21,5 +21,6 @@ from website.core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('saving_pointing/', views.saving_lost_pet_pointing_form, name='saving_lost_pet_pointing_form')
+    path('saving_pointing/', views.saving_lost_pet_pointing_form, name='saving_lost_pet_pointing_form'),
+    path('animais_perdidos/', views.list_lost_dogs),
 ]
