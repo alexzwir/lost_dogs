@@ -6,6 +6,13 @@ from django.utils.timesince import timesince
 # And when user have more that one pet?
 # How to set an age, when you have the birthday?
 
+PET_TYPE_CHOICE = (
+    ('cachorro','Cachorro'),
+    ('gato','Gato')
+)
+
+
+
 # def upload_image(instance,filename):
 #     return "images/{user}/{filename}".format(user=instance.user,filename=filename)
 
@@ -39,7 +46,7 @@ class Pet(models.Model):
     pet_name        = models.CharField(max_length=50)
     pet_age         = models.CharField(null=True,max_length=100)
     pet_birthday    = models.DateField(null=True)
-    pet_type        = models.CharField(max_length=50)
+    pet_type        = models.CharField(max_length=70,choices=PET_TYPE_CHOICE)
     pet_breed       = models.CharField(max_length=50)
     pet_chip_number = models.CharField(max_length=50)
     pet_lost_flag   = models.BooleanField(max_length=50)
