@@ -11,8 +11,6 @@ PET_TYPE_CHOICE = (
     ('gato','Gato')
 )
 
-
-
 # def upload_image(instance,filename):
 #     return "images/{user}/{filename}".format(user=instance.user,filename=filename)
 
@@ -53,8 +51,9 @@ class Pet(models.Model):
     pet_timestamp   = models.DateTimeField(auto_now_add=True,null=True)
     pet_updated_at  = models.DateTimeField(auto_now=True,null=True)
 
+    @property
     def age(self):
-        return(timesince(self.pet_age))
+        return timesince(self.pet_birthday)
     
     def __str__(self):
         return self.pet_name
