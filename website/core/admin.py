@@ -26,7 +26,6 @@ class PetModelAdmin(admin.ModelAdmin):
     fields= [
         'pet_name',
         'pet_birthday',
-        'pet_age',
         'get_age',
         'pet_type',
         'pet_chip_number',
