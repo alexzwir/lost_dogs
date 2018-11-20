@@ -46,7 +46,7 @@ class Pet(models.Model):
     pet_type        = models.CharField(max_length=70,choices=PET_TYPE_CHOICE)
     pet_breed       = models.CharField(max_length=50)
     pet_chip_number = models.CharField(max_length=50)
-    pet_lost_flag   = models.BooleanField(max_length=50)
+    pet_lost_flag   = models.BooleanField(max_length=50,default=False)
     pet_timestamp   = models.DateTimeField(auto_now_add=True,null=True)
     pet_updated_at  = models.DateTimeField(auto_now=True,null=True)
 

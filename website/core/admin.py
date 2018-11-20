@@ -27,6 +27,7 @@ class PetModelAdmin(admin.ModelAdmin):
         'pet_name',
         'pet_birthday',
         'get_age',
+        'pet_breed',
         'pet_type',
         'pet_chip_number',
         'pet_lost_flag',
