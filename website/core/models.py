@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+from django.utils.timesince import timesince
 
 # How to use a photo in this case?
 # And when user have more that one pet?
@@ -30,15 +32,22 @@ class Person(models.Model):
     person_birthday = models.CharField(max_length=50)
     person_personal_photo = models.CharField(max_length=50)
     person_personal_pet = models.CharField(max_length=50)
+    person_created_at = models.DateTimeField(auto_now_add=True,null=True)
+    person_updated_at = models.DateTimeField(auto_now=True)
 
 class Pet(models.Model):
-    pet_name = models.CharField(max_length=50)
-    pet_age = models.CharField(max_length=50)
-    pet_birthday = models.CharField(max_length=50)
-    pet_type = models.CharField(max_length=50)
-    pet_breed = models.CharField(max_length=50)
+    pet_name        = models.CharField(max_length=50)
+    pet_age         = models.DateField(null=True)
+    pet_birthday    = models.CharField(max_length=50)
+    pet_type        = models.CharField(max_length=50)
+    pet_breed       = models.CharField(max_length=50)
     pet_chip_number = models.CharField(max_length=50)
-    pet_lost_flag = models.BooleanField(max_length=50)
+    pet_lost_flag   = models.BooleanField(max_length=50)
+    pet_timestamp   = models.DateTimeField(auto_now_add=True,null=True)
+    pet_updated_at  = models.DateTimeField(auto_now=True,null=True)
+
+    def age(self):
+        return(timesince(self.pet_age))
     
 class LostPet(models.Model):
     lost_pet_pointing = models.CharField(max_length=50)
