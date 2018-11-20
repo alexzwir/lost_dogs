@@ -38,7 +38,7 @@ class Person(models.Model):
 class Pet(models.Model):
     pet_name        = models.CharField(max_length=50)
     pet_age         = models.DateField(null=True)
-    pet_birthday    = models.CharField(max_length=50)
+    pet_birthday    = models.DateField(null=True)
     pet_type        = models.CharField(max_length=50)
     pet_breed       = models.CharField(max_length=50)
     pet_chip_number = models.CharField(max_length=50)
