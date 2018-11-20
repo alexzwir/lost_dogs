@@ -56,6 +56,10 @@ class Pet(models.Model):
     def age(self):
         return(timesince(self.pet_age))
     
+    def __str__(self):
+        return self.pet_name
+
+
 class LostPet(models.Model):
     lost_pet_pointing = models.CharField(max_length=50)
     lost_pet_photo = models.ImageField(blank=True,null=True)
